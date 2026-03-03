@@ -33,20 +33,9 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-3 text-text-primary font-bold tracking-tight group">
               <div className="relative w-10 h-10 overflow-hidden rounded-xl bg-yellow/10 flex items-center justify-center border border-yellow/20 group-hover:border-yellow/50 transition-colors">
                 <img 
-                  src="/logo.png" 
+                  src="/logoduck.png" 
                   alt="Logo" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const parent = e.currentTarget.parentElement;
-                    if (parent) {
-                      const icon = document.createElement('div');
-                      icon.innerHTML = '🦆';
-                      icon.className = 'text-2xl';
-                      parent.appendChild(icon);
-                    }
-                  }}
                 />
               </div>
               <span className="text-xl">RubberDuck<span className="text-yellow">.</span>Space</span>

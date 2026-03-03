@@ -25,7 +25,11 @@ const integrations = [
   { name: 'Azure', icon: <Cpu className="w-6 h-6" /> },
   { name: 'Sentry', icon: (
     <div className="w-6 h-6 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20">
-      <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+      <img 
+        src="/logoduck.png" 
+        alt="" 
+        className="w-full h-full object-cover" 
+      />
     </div>
   ) },
 ];

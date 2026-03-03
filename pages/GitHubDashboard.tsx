@@ -74,20 +74,9 @@ export function GitHubDashboard() {
           <div className="flex justify-center mb-6">
             <div className="w-20 h-20 bg-yellow/10 rounded-2xl flex items-center justify-center border border-yellow/20 overflow-hidden shadow-2xl shadow-yellow/20">
               <img 
-                src="/logo.png" 
+                src="/logoduck.png" 
                 alt="RubberDuck Logo" 
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  const parent = e.currentTarget.parentElement;
-                  if (parent) {
-                    const icon = document.createElement('div');
-                    icon.innerHTML = '🦆';
-                    icon.className = 'text-4xl';
-                    parent.appendChild(icon);
-                  }
-                }}
               />
             </div>
           </div>
@@ -165,7 +154,11 @@ export function GitHubDashboard() {
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-sm text-text-secondary hover:text-white cursor-pointer transition-colors group">
                   <div className="w-4 h-4 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20 group-hover:border-yellow/50 transition-colors">
-                    <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img 
+                      src="/logoduck.png" 
+                      alt="" 
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
                   <span>Vercel</span>
                 </div>
@@ -184,7 +177,11 @@ export function GitHubDashboard() {
               {[
                 { id: 'overview', label: 'Overview', icon: (
                   <div className="w-4 h-4 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20">
-                    <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img 
+                      src="/logoduck.png" 
+                      alt="" 
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
                 ) },
                 { id: 'repositories', label: 'Repositories', icon: <Github className="w-4 h-4" /> },
@@ -256,7 +253,11 @@ export function GitHubDashboard() {
                           <div className="p-6 border-b border-white/5 flex justify-between items-center">
                             <div className="flex items-center gap-3">
                               <div className="w-9 h-9 bg-black rounded-full border border-white/10 flex items-center justify-center overflow-hidden">
-                                <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                                <img 
+                                  src="/logoduck.png" 
+                                  alt="" 
+                                  className="w-full h-full object-cover" 
+                                />
                               </div>
                               <div>
                                 <h4 className="font-bold text-sm">resend-ui-clone</h4>
@@ -563,7 +564,11 @@ export function GitHubDashboard() {
           <div className="flex gap-6">
             <div className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors group relative">
               <div className="w-3 h-3 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20">
-                <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img 
+                  src="/logoduck.png" 
+                  alt="" 
+                  className="w-full h-full object-cover" 
+                />
               </div>
               Vercel: Ready
               <div className="absolute bottom-full right-0 mb-3 w-64 glass-card p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all translate-y-2 group-hover:translate-y-0">

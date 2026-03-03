@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 
 const plans = [
@@ -101,13 +102,16 @@ export function Pricing() {
                 <span className="text-text-secondary">{plan.period}</span>
               </div>
 
-              <button className={`w-full py-3 rounded-xl font-semibold transition-all mb-8 ${
-                plan.highlighted 
-                  ? 'bg-yellow text-space hover:scale-[1.02] active:scale-[0.98] glow-yellow' 
-                  : 'bg-white/[0.05] text-text-primary hover:bg-white/[0.1] border border-white/[0.1]'
-              }`}>
+              <Link 
+                to="/github"
+                className={`w-full py-3 rounded-xl font-semibold transition-all mb-8 text-center ${
+                  plan.highlighted 
+                    ? 'bg-yellow text-space hover:scale-[1.02] active:scale-[0.98] glow-yellow' 
+                    : 'bg-white/[0.05] text-text-primary hover:bg-white/[0.1] border border-white/[0.1]'
+                }`}
+              >
                 {plan.cta}
-              </button>
+              </Link>
 
               <div className="space-y-4 flex-1">
                 {plan.features.map((feature, fIndex) => (

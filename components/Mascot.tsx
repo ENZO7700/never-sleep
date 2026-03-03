@@ -45,24 +45,11 @@ export function Mascot({ className = '', size = 120, withBubble = false, bubbleT
       >
         <div className="absolute inset-0 bg-yellow/20 blur-3xl rounded-full group-hover:bg-yellow/40 transition-colors duration-500" />
         <img 
-          src="/logo.png" 
+          src="/logoduck.png" 
           alt="RubberDuck Mascot" 
           width={size}
           height={size}
           className="relative z-10 drop-shadow-2xl hover:scale-110 transition-transform duration-300 cursor-pointer"
-          referrerPolicy="no-referrer"
-          onError={(e) => {
-            e.currentTarget.style.display = 'none';
-            const parent = e.currentTarget.parentElement;
-            if (parent && !parent.querySelector('.fallback-duck')) {
-              const duck = document.createElement('div');
-              duck.innerHTML = '🦆';
-              duck.className = 'fallback-duck text-6xl flex items-center justify-center';
-              duck.style.width = `${size}px`;
-              duck.style.height = `${size}px`;
-              parent.appendChild(duck);
-            }
-          }}
         />
       </motion.div>
     </div>

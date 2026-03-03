@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Terminal } from 'lucide-react';
 
 export function StickyCTA() {
@@ -28,20 +29,9 @@ export function StickyCTA() {
             <div className="flex items-center gap-3 font-bold text-text-primary group">
               <div className="relative w-6 h-6 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20 group-hover:border-yellow/50 transition-colors">
                 <img 
-                  src="/logo.png" 
+                  src="/logoduck.png" 
                   alt="Logo" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const parent = e.currentTarget.parentElement;
-                    if (parent) {
-                      const icon = document.createElement('div');
-                      icon.innerHTML = '🦆';
-                      icon.className = 'text-sm';
-                      parent.appendChild(icon);
-                    }
-                  }}
                 />
               </div>
               <span className="hidden sm:inline">RubberDuck<span className="text-yellow">.</span>Space</span>
@@ -50,9 +40,12 @@ export function StickyCTA() {
               <span className="text-sm text-text-secondary hidden md:block font-medium">
                 Ready to eliminate technical debt?
               </span>
-              <button className="bg-yellow text-white dark:text-space font-semibold px-5 py-2 rounded-lg text-sm transition-all hover:scale-[1.03] active:scale-[0.99] glow-yellow">
+              <Link 
+                to="/github"
+                className="bg-yellow text-white dark:text-space font-semibold px-5 py-2 rounded-lg text-sm transition-all hover:scale-[1.03] active:scale-[0.99] glow-yellow"
+              >
                 Start fixing code
-              </button>
+              </Link>
             </div>
           </div>
         </motion.div>

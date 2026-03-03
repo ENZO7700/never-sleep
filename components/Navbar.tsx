@@ -86,20 +86,9 @@ export function Navbar() {
         <Link to="/" className="flex items-center gap-3 text-text-primary font-bold tracking-tight group">
           <div className="relative w-8 h-8 overflow-hidden rounded-lg bg-yellow/10 flex items-center justify-center border border-yellow/20 group-hover:border-yellow/50 transition-colors">
             <img 
-              src="/logo.png" 
+              src="/logoduck.png" 
               alt="Logo" 
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-              referrerPolicy="no-referrer"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                const parent = e.currentTarget.parentElement;
-                if (parent) {
-                  const icon = document.createElement('div');
-                  icon.innerHTML = '🦆';
-                  icon.className = 'text-xl';
-                  parent.appendChild(icon);
-                }
-              }}
             />
           </div>
           <span className="text-lg">RubberDuck<span className="text-yellow">.</span>Space</span>
@@ -124,9 +113,12 @@ export function Navbar() {
             <Github className="w-5 h-5" />
           </Link>
           <ThemeToggle />
-          <button className="bg-yellow text-white dark:text-space font-semibold px-4 py-2 rounded-lg text-sm transition-all hover:scale-[1.03] active:scale-[0.99] glow-yellow">
+          <Link 
+            to="/github"
+            className="bg-yellow text-white dark:text-space font-semibold px-4 py-2 rounded-lg text-sm transition-all hover:scale-[1.03] active:scale-[0.99] glow-yellow"
+          >
             Start fixing code
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -162,9 +154,12 @@ export function Navbar() {
             <MobileNavLink href="#security">Security</MobileNavLink>
             <MobileNavLink href="#pricing">Pricing</MobileNavLink>
             <MobileNavLink href="/docs">Documentation</MobileNavLink>
-            <button className="bg-yellow text-white dark:text-space font-semibold px-4 py-3 rounded-lg text-sm mt-4 glow-yellow">
+            <Link 
+              to="/github"
+              className="bg-yellow text-white dark:text-space font-semibold px-4 py-3 rounded-lg text-sm mt-4 glow-yellow text-center"
+            >
               Start fixing code
-            </button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

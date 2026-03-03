@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { TerminalDemo } from './TerminalDemo';
 import { Mascot } from './Mascot';
 
@@ -25,7 +26,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <section id="product" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Column: Copy */}
@@ -63,18 +64,20 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            <button 
+            <Link 
+              to="/github"
               data-testid="hero-cta-start"
               className="bg-yellow text-space font-semibold px-8 py-4 rounded-xl text-base transition-all hover:scale-[1.03] active:scale-[0.99] glow-yellow flex items-center justify-center gap-2"
             >
               Start fixing code
-            </button>
-            <button 
+            </Link>
+            <Link 
+              to="/docs"
               data-testid="hero-cta-docs"
               className="glass-card px-8 py-4 rounded-xl text-base font-medium text-text-primary transition-all hover:border-cyan/50 hover:shadow-[0_1px_0_0_#00F5FF_inset] flex items-center justify-center"
             >
               View Documentation
-            </button>
+            </Link>
           </motion.div>
         </div>
 

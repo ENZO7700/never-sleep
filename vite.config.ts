@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
         tailwindcss(),
         VitePWA({
           registerType: 'autoUpdate',
-          includeAssets: ['logo.png'],
+          includeAssets: ['/logoduck.png'],
           manifest: {
             name: 'RubberDuck.Space',
             short_name: 'RubberDuck',
@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
             display: 'standalone',
             icons: [
               {
-                src: 'logo.png',
+                src: '/logoduck.png',
                 sizes: '192x192 512x512',
                 type: 'image/png',
                 purpose: 'any maskable'
