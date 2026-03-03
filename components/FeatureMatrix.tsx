@@ -38,7 +38,7 @@ export function FeatureMatrix() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="glass-card overflow-hidden border border-white/[0.08]"
         >
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto" data-testid="feature-matrix-table">
             <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
                 <tr className="border-b border-white/[0.08] bg-white/[0.02]">

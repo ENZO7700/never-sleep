@@ -42,10 +42,16 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            <button className="bg-yellow text-space font-semibold px-8 py-4 rounded-xl text-base transition-all hover:scale-[1.03] active:scale-[0.99] glow-yellow flex items-center justify-center gap-2">
+            <button 
+              data-testid="hero-cta-start"
+              className="bg-yellow text-space font-semibold px-8 py-4 rounded-xl text-base transition-all hover:scale-[1.03] active:scale-[0.99] glow-yellow flex items-center justify-center gap-2"
+            >
               Start fixing code
             </button>
-            <button className="glass-card px-8 py-4 rounded-xl text-base font-medium text-text-primary transition-all hover:border-cyan/50 hover:shadow-[0_1px_0_0_#00F5FF_inset] flex items-center justify-center">
+            <button 
+              data-testid="hero-cta-docs"
+              className="glass-card px-8 py-4 rounded-xl text-base font-medium text-text-primary transition-all hover:border-cyan/50 hover:shadow-[0_1px_0_0_#00F5FF_inset] flex items-center justify-center"
+            >
               View Documentation
             </button>
           </motion.div>

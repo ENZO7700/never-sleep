@@ -73,6 +73,7 @@ export function InteractiveDemo() {
                 {status === 'idle' && (
                   <button 
                     onClick={handleFixCode}
+                    data-testid="demo-fix-button"
                     className="flex items-center gap-2 text-xs font-semibold bg-yellow text-space px-3 py-1.5 rounded hover:scale-105 transition-transform"
                   >
                     <Play className="w-3 h-3" /> Fix Code

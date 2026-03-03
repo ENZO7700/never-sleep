@@ -91,11 +91,13 @@ export function GitHubDashboard() {
                 value={inputToken}
                 onChange={(e) => setInputToken(e.target.value)}
                 placeholder="ghp_xxxxxxxxxxxx"
+                data-testid="gh-token-input"
                 className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow/50 transition-colors"
               />
             </div>
             <button 
               type="submit"
+              data-testid="gh-auth-button"
               className="w-full bg-white text-black font-semibold py-3 rounded-lg hover:bg-gray-200 transition-all active:scale-[0.98]"
             >
               Authenticate

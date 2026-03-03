@@ -94,7 +94,7 @@ export function Navbar() {
           <NavLink href="#features">Features</NavLink>
           <NavLink href="#security">Security</NavLink>
           <NavLink href="#pricing">Pricing</NavLink>
-          <NavLink href="/docs">Documentation</NavLink>
+          <NavLink href="/docs" data-testid="nav-link-docs">Documentation</NavLink>
         </div>
 
         {/* CTA & Theme */}

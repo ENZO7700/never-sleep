@@ -51,6 +51,7 @@ export function FAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                data-testid={`faq-item-${index}`}
                 className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
                 aria-expanded={openIndex === index}
               >
