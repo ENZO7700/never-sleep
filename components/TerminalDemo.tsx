@@ -25,7 +25,27 @@ export function TerminalDemo() {
           <div className="w-3 h-3 rounded-full bg-white/20" />
           <div className="w-3 h-3 rounded-full bg-white/20" />
         </div>
-        <div className="text-text-muted text-xs">agent_runner_v2.sh</div>
+        <div className="flex items-center gap-3">
+          <div className="w-5 h-5 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20">
+            <img 
+              src="/logo.png" 
+              alt="Logo" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const parent = e.currentTarget.parentElement;
+                if (parent) {
+                  const icon = document.createElement('div');
+                  icon.innerHTML = '🦆';
+                  icon.className = 'text-[10px]';
+                  parent.appendChild(icon);
+                }
+              }}
+            />
+          </div>
+          <div className="text-text-muted text-xs">agent_runner_v2.sh</div>
+        </div>
       </div>
 
       {/* Terminal Body */}

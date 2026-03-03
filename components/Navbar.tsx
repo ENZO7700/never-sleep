@@ -83,9 +83,26 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 text-text-primary font-semibold tracking-tight">
-          <Terminal className="w-5 h-5 text-yellow" />
-          <span>RubberDuck.Space</span>
+        <Link to="/" className="flex items-center gap-3 text-text-primary font-bold tracking-tight group">
+          <div className="relative w-8 h-8 overflow-hidden rounded-lg bg-yellow/10 flex items-center justify-center border border-yellow/20 group-hover:border-yellow/50 transition-colors">
+            <img 
+              src="/logo.png" 
+              alt="Logo" 
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const parent = e.currentTarget.parentElement;
+                if (parent) {
+                  const icon = document.createElement('div');
+                  icon.innerHTML = '🦆';
+                  icon.className = 'text-xl';
+                  parent.appendChild(icon);
+                }
+              }}
+            />
+          </div>
+          <span className="text-lg">RubberDuck<span className="text-yellow">.</span>Space</span>
         </Link>
 
         {/* Desktop Links */}

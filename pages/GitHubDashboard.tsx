@@ -72,8 +72,23 @@ export function GitHubDashboard() {
           className="max-w-md w-full glass-card p-8 border-white/10"
         >
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center border border-white/10">
-              <Github className="w-8 h-8 text-white" />
+            <div className="w-20 h-20 bg-yellow/10 rounded-2xl flex items-center justify-center border border-yellow/20 overflow-hidden shadow-2xl shadow-yellow/20">
+              <img 
+                src="/logo.png" 
+                alt="RubberDuck Logo" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const parent = e.currentTarget.parentElement;
+                  if (parent) {
+                    const icon = document.createElement('div');
+                    icon.innerHTML = '🦆';
+                    icon.className = 'text-4xl';
+                    parent.appendChild(icon);
+                  }
+                }}
+              />
             </div>
           </div>
           <h1 className="text-2xl font-bold text-center text-white mb-2">Connect GitHub</h1>
@@ -148,8 +163,10 @@ export function GitHubDashboard() {
             <div className="space-y-4">
               <h4 className="text-xs font-bold text-text-muted uppercase tracking-widest">Integrations</h4>
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-sm text-text-secondary hover:text-white cursor-pointer transition-colors">
-                  <Terminal className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-sm text-text-secondary hover:text-white cursor-pointer transition-colors group">
+                  <div className="w-4 h-4 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20 group-hover:border-yellow/50 transition-colors">
+                    <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
                   <span>Vercel</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary hover:text-white cursor-pointer transition-colors">
@@ -165,7 +182,11 @@ export function GitHubDashboard() {
             {/* Tabs */}
             <div className="flex gap-8 border-b border-white/10 mb-8 overflow-x-auto no-scrollbar">
               {[
-                { id: 'overview', label: 'Overview', icon: <Terminal className="w-4 h-4" /> },
+                { id: 'overview', label: 'Overview', icon: (
+                  <div className="w-4 h-4 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20">
+                    <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                ) },
                 { id: 'repositories', label: 'Repositories', icon: <Github className="w-4 h-4" /> },
                 { id: 'notes', label: '/notes', icon: <Activity className="w-4 h-4" />, color: 'text-yellow' }
               ].map((tab) => (
@@ -234,8 +255,8 @@ export function GitHubDashboard() {
                         <div className="glass-card border-t-2 border-t-white overflow-hidden">
                           <div className="p-6 border-b border-white/5 flex justify-between items-center">
                             <div className="flex items-center gap-3">
-                              <div className="w-9 h-9 bg-black rounded-full border border-white/10 flex items-center justify-center">
-                                <Terminal className="w-5 h-5 text-white" />
+                              <div className="w-9 h-9 bg-black rounded-full border border-white/10 flex items-center justify-center overflow-hidden">
+                                <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                               </div>
                               <div>
                                 <h4 className="font-bold text-sm">resend-ui-clone</h4>
@@ -541,7 +562,9 @@ export function GitHubDashboard() {
           </div>
           <div className="flex gap-6">
             <div className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors group relative">
-              <Terminal className="w-3 h-3" />
+              <div className="w-3 h-3 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20">
+                <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              </div>
               Vercel: Ready
               <div className="absolute bottom-full right-0 mb-3 w-64 glass-card p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all translate-y-2 group-hover:translate-y-0">
                 <div className="flex justify-between items-center mb-2">

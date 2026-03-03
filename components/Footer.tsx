@@ -1,6 +1,6 @@
 import React from 'react';
-import { Terminal } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { Mascot } from './Mascot';
 
 export function Footer() {
   const location = useLocation();
@@ -26,13 +26,33 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-space border-t border-white/[0.06] py-12 relative overflow-hidden">
+    <footer className="bg-space border-t border-white/[0.06] py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
-          <Link to="/" className="flex items-center gap-2 text-text-primary font-semibold tracking-tight mb-4">
-            <Terminal className="w-5 h-5 text-yellow" />
-            <span>RubberDuck.Space</span>
-          </Link>
+          <div className="flex items-center gap-6 mb-6">
+            <Link to="/" className="flex items-center gap-3 text-text-primary font-bold tracking-tight group">
+              <div className="relative w-10 h-10 overflow-hidden rounded-xl bg-yellow/10 flex items-center justify-center border border-yellow/20 group-hover:border-yellow/50 transition-colors">
+                <img 
+                  src="/logo.png" 
+                  alt="Logo" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const parent = e.currentTarget.parentElement;
+                    if (parent) {
+                      const icon = document.createElement('div');
+                      icon.innerHTML = '🦆';
+                      icon.className = 'text-2xl';
+                      parent.appendChild(icon);
+                    }
+                  }}
+                />
+              </div>
+              <span className="text-xl">RubberDuck<span className="text-yellow">.</span>Space</span>
+            </Link>
+            <Mascot size={60} className="hidden sm:block" />
+          </div>
           <p className="text-text-secondary text-sm max-w-[40ch] leading-relaxed mb-6">
             Autonomous code repair for enterprise engineering teams. Reduce MTTR and ship safer patches.
           </p>

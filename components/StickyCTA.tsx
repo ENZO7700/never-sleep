@@ -25,9 +25,26 @@ export function StickyCTA() {
           className="fixed top-0 left-0 right-0 z-40 bg-space/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06] py-3 px-6 flex justify-between items-center shadow-lg"
         >
           <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
-            <div className="flex items-center gap-2 font-bold text-text-primary">
-              <Terminal className="w-5 h-5 text-yellow" />
-              <span className="hidden sm:inline">RubberDuck.Space</span>
+            <div className="flex items-center gap-3 font-bold text-text-primary group">
+              <div className="relative w-6 h-6 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20 group-hover:border-yellow/50 transition-colors">
+                <img 
+                  src="/logo.png" 
+                  alt="Logo" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const parent = e.currentTarget.parentElement;
+                    if (parent) {
+                      const icon = document.createElement('div');
+                      icon.innerHTML = '🦆';
+                      icon.className = 'text-sm';
+                      parent.appendChild(icon);
+                    }
+                  }}
+                />
+              </div>
+              <span className="hidden sm:inline">RubberDuck<span className="text-yellow">.</span>Space</span>
             </div>
             <div className="flex items-center gap-6">
               <span className="text-sm text-text-secondary hidden md:block font-medium">

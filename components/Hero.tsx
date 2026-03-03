@@ -1,8 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TerminalDemo } from './TerminalDemo';
+import { Mascot } from './Mascot';
 
 export function Hero() {
+  const [bubbleText, setBubbleText] = React.useState("Analyzing stack trace...");
+  const messages = [
+    "Analyzing stack trace...",
+    "Finding root cause...",
+    "Generating patch...",
+    "Running tests...",
+    "Opening PR...",
+    "Technical debt: -14%",
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setBubbleText(prev => {
+        const idx = messages.indexOf(prev);
+        return messages[(idx + 1) % messages.length];
+      });
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
@@ -65,6 +86,11 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="w-full max-w-lg h-full relative"
           >
+            {/* Mascot Floating */}
+            <div className="absolute -top-20 -left-10 z-40 hidden md:block">
+              <Mascot withBubble bubbleText={bubbleText} size={100} />
+            </div>
+
             {/* Main Terminal */}
             <div className="absolute inset-0 z-20">
               <TerminalDemo />

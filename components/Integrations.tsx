@@ -23,7 +23,11 @@ const integrations = [
   { name: 'AWS', icon: <Cloud className="w-6 h-6" /> },
   { name: 'Discord', icon: <MessageSquare className="w-6 h-6" /> },
   { name: 'Azure', icon: <Cpu className="w-6 h-6" /> },
-  { name: 'Sentry', icon: <Terminal className="w-6 h-6" /> },
+  { name: 'Sentry', icon: (
+    <div className="w-6 h-6 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20">
+      <img src="/logo.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+    </div>
+  ) },
 ];
 
 export function Integrations() {

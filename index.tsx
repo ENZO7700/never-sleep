@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { LiveFeed } from './components/LiveFeed';
 import { StickyCTA } from './components/StickyCTA';
 import { ScrollToTop } from './components/ScrollToTop';
+import { FloatingMascot } from './components/FloatingMascot';
 
 // Pages
 import { Home } from './pages/Home';
@@ -25,6 +26,7 @@ function App() {
         <Navbar />
         <StickyCTA />
         <LiveFeed />
+        <FloatingMascot />
         <main className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
