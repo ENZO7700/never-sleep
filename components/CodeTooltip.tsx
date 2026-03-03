@@ -11,7 +11,7 @@ export function CodeTooltip({ children, code, language = 'json' }: CodeTooltipPr
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <span 
+    <div 
       className="relative inline-block border-b border-dashed border-yellow/50 cursor-help text-text-primary transition-colors hover:text-yellow"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -35,6 +35,6 @@ export function CodeTooltip({ children, code, language = 'json' }: CodeTooltipPr
           </motion.div>
         )}
       </AnimatePresence>
-    </span>
+    </div>
   );
 }

@@ -52,9 +52,9 @@ export function ProductSnapshot() {
               <h3 className="text-xl font-semibold text-text-primary mb-3 tracking-tight">
                 {feature.title}
               </h3>
-              <p className="text-text-secondary leading-relaxed max-w-[40ch]">
+              <div className="text-text-secondary leading-relaxed max-w-[40ch]">
                 {feature.description}
-              </p>
+              </div>
             </div>
           ))}
         </motion.div>
