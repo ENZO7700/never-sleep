@@ -1,20 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# never-sleep
 
-# Run and deploy your AI Studio app
+Marketing site for [RubberDuck.Space](https://never-sleep.vercel.app) — an autonomous AI engineer that never sleeps. Built with Vite 6, React 19, and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+## Pages
 
-View your app in AI Studio: https://ai.studio/apps/a7706c93-ae76-497a-ac29-a71b3bb05105
+- Home, Docs, About, Blog, Careers, Contact
+- GitHub Dashboard (demo UI)
 
-## Run Locally
+## Prerequisites
 
-**Prerequisites:**  Node.js
+- Node.js 20+ (22 recommended)
+- npm
 
+## Setup
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm install
+cp .env.example .env.local
+```
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start the Vite dev server on port 3000 |
+| `npm run lint` | Type-check with `tsc --noEmit` |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run test:e2e` | Run Cypress end-to-end tests (local only) |
+
+## Environment variables
+
+Key names only — never commit real values.
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `VITE_GEMINI_API_KEY` | No | Optional Gemini API key for client-side AI features. When unset, those features fail closed without breaking the landing page. |
+
+For local development, set variables in `.env.local` (gitignored). On Vercel, configure `VITE_GEMINI_API_KEY` in project settings if needed.
+
+## Health checks
+
+Static JSON endpoints are served before the SPA catch-all:
+
+- `GET /health` → `{"status":"ok"}`
+- `GET /ready` → `{"status":"ready"}`
+
+## End-to-end tests
+
+Cypress tests live under `cypress/e2e/`. They require a running dev server and are intended for local use:
+
+```bash
+npm run dev
+# in another terminal
+npm run test:e2e
+```
+
+E2E tests are not run in CI.
+
+## Deploy
+
+The app is configured for [Vercel](https://vercel.com) with SPA routing via `vercel.json`.
