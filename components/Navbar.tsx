@@ -101,6 +101,7 @@ export function Navbar() {
           <NavLink href="#security">Security</NavLink>
           <NavLink href="#pricing">Pricing</NavLink>
           <NavLink href="/docs" data-testid="nav-link-docs">Documentation</NavLink>
+          <NavLink href="/contact" data-testid="nav-link-contact">Contact</NavLink>
         </div>
 
         {/* CTA & Theme */}
@@ -154,6 +155,7 @@ export function Navbar() {
             <MobileNavLink href="#security">Security</MobileNavLink>
             <MobileNavLink href="#pricing">Pricing</MobileNavLink>
             <MobileNavLink href="/docs">Documentation</MobileNavLink>
+            <MobileNavLink href="/contact">Contact</MobileNavLink>
             <Link 
               to="/github"
               className="bg-yellow text-white dark:text-space font-semibold px-4 py-3 rounded-lg text-sm mt-4 glow-yellow text-center"

@@ -5,7 +5,7 @@ Marketing site for [RubberDuck.Space](https://never-sleep.vercel.app) — an aut
 ## Pages
 
 - Home, Docs, About, Blog, Careers, Contact
-- GitHub Dashboard (demo UI)
+- GitHub Dashboard (public repository view)
 
 ## Prerequisites
 
@@ -36,8 +36,9 @@ Key names only — never commit real values.
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `VITE_GEMINI_API_KEY` | No | Optional Gemini API key for client-side AI features. When unset, those features fail closed without breaking the landing page. |
+| `CONTACT_WEBHOOK_URL` | No | Server-side webhook URL for `/api/contact` form submissions. When unset, the contact form returns HTTP 503 and shows an honest not-configured message. |
 
-For local development, set variables in `.env.local` (gitignored). On Vercel, configure `VITE_GEMINI_API_KEY` in project settings if needed.
+For local development, set variables in `.env.local` (gitignored). On Vercel, configure environment variables in project settings. `CONTACT_WEBHOOK_URL` is read only by the serverless function and is not exposed to the browser.
 
 ## Health checks
 
