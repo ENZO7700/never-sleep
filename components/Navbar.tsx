@@ -88,7 +88,9 @@ export function Navbar() {
             <img 
               src="/logoduck.png" 
               alt="Logo" 
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              width={32}
+              height={32}
+              className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
             />
           </div>
           <span className="text-lg">RubberDuck<span className="text-yellow">.</span>Space</span>

@@ -31,7 +31,9 @@ export function StickyCTA() {
                 <img 
                   src="/logoduck.png" 
                   alt="Logo" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  width={24}
+                  height={24}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <span className="hidden sm:inline">RubberDuck<span className="text-yellow">.</span>Space</span>
