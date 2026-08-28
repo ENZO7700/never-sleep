@@ -45,11 +45,12 @@ export function Mascot({ className = '', size = 120, withBubble = false, bubbleT
       >
         <div className="absolute inset-0 bg-yellow/20 blur-3xl rounded-full group-hover:bg-yellow/40 transition-colors duration-500" />
         <img 
-          src="/logoduck.png" 
+          src="/mascot-duck.png" 
           alt="RubberDuck Mascot" 
           width={size}
           height={size}
-          className="relative z-10 drop-shadow-2xl hover:scale-110 transition-transform duration-300 cursor-pointer"
+          decoding="async"
+          className="relative z-10 drop-shadow-2xl hover:scale-110 transition-transform duration-300 cursor-pointer object-contain"
         />
       </motion.div>
     </div>

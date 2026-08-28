@@ -30,7 +30,9 @@ export function TerminalDemo() {
               <img 
                 src="/logoduck.png" 
                 alt="Logo" 
-                className="w-full h-full object-cover"
+                width={20}
+                height={20}
+                className="w-full h-full object-contain"
               />
             </div>
           <div className="text-text-muted text-xs">agent_runner_v2.sh</div>

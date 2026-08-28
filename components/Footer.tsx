@@ -35,7 +35,9 @@ export function Footer() {
                 <img 
                   src="/logoduck.png" 
                   alt="Logo" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <span className="text-xl">RubberDuck<span className="text-yellow">.</span>Space</span>

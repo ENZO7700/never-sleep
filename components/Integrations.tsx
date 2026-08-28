@@ -10,7 +10,8 @@ import {
   Cloud, 
   MessageSquare, 
   Terminal,
-  Cpu
+  Cpu,
+  Bug
 } from 'lucide-react';
 
 const integrations = [
@@ -23,15 +24,7 @@ const integrations = [
   { name: 'AWS', icon: <Cloud className="w-6 h-6" /> },
   { name: 'Discord', icon: <MessageSquare className="w-6 h-6" /> },
   { name: 'Azure', icon: <Cpu className="w-6 h-6" /> },
-  { name: 'Sentry', icon: (
-    <div className="w-6 h-6 overflow-hidden rounded bg-yellow/10 flex items-center justify-center border border-yellow/20">
-      <img 
-        src="/logoduck.png" 
-        alt="" 
-        className="w-full h-full object-cover" 
-      />
-    </div>
-  ) },
+  { name: 'Sentry', icon: <Bug className="w-6 h-6" /> },
 ];
 
 export function Integrations() {
